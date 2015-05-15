@@ -1,0 +1,24 @@
+<h1><%= @topic.name %></h1>
+<hr>
+
+
+<% if @articles.size > 0 %>
+    <div class="articles-entries">
+      <% @articles.each do |article| %>
+          <div class="entry">
+            <h2>
+              <%= link_to(article.title, articles_show_path(:id => article.id)) %>
+            </h2>
+
+            <p><%= article.summary %></p>
+            <time><%= article.created_at.strftime("%m/%d/%Y %H:%I") %></time>
+          </div>
+      <% end %>
+    </div>
+<% else %>
+    <div class="blankslate">
+      <h3>There are no articles</h3>
+
+      <p>Sorry there are currently no articles for this topic at the moment</p>
+    </div>
+<% end %>

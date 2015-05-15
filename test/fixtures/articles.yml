@@ -1,0 +1,88 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: Cisco Prime Infrastructure - ex-WCS (Cisco Wireless Control System) - WLC - Wcsserver
+  summary: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus rhoncus finibus orci, in dictum dolor suscipit non. Vestibulum lacinia, felis ut tempus pulvinar, nibh purus pretium urna, et lobortis nunc enim sit amet nunc.
+  content: >
+              # Annis ponit huic veniunt Agenore vocis
+
+              ## Temptat fallacis inexperrectus adlevat chlamydis cornu
+
+              Lorem markdownum in negabo vellem [sed spectat](http://jaspervdj.be/) viriles
+              frondibus exercet; et fama caelum aurea insequitur en cernens vigili.
+              [Phlegraeis est sed](http://stoneship.org/) Alpheias saeva: qua est cuspide
+              conponere [adhuc](http://eelslap.com/) quoque dixerat thalamis eventusque
+              letoque.
+
+              1. Suum tamen inguine obitum in delusum nomen
+              2. Plura peteret adspice
+              3. Vide in coniunx pondere fecerat
+              4. Tibi es gradus
+              5. Celebres undis ignea
+              6. Fata et idcirco aratri
+
+              ## Minus repetitque certa omnis inane quaesitamque Actaeona
+
+              Volucres defrenato quidem prohibent primumque praecipitem cibus obscenae, rupit
+              deorum est et passa magna obruor, Abanteis [et](http://imgur.com/). **Ille
+              aliquid ubi** corpore munus astra, tibi, hostes **timidissime**.
+
+              - Demunt potest
+              - Turba propago conbibitur
+              - Super utque felix angulus Aram
+              - Ausus Troiana captantia quibus reliquit extremum quam
+
+              ## Male accepto
+
+              Donec eloquioque umeri exsultantemque Iunonem inaequalis caelique supremum,
+              versa, qua. Seque tumulo iam, enim, ut praelata *cum vomeribus alatur* tibi
+              procul, coloris o magno diris nodum. Alcyone statuam cum in dictis intervenit
+              campi cecidere coma cuspide, [deus](http://omfgdogs.com/) adsimulavit.
+
+              1. Habitus tamen
+              2. Parenti non concava maculoso dixit demum carpitur
+              3. In virginitate unus inclinat remansit imbres
+              4. Illa tenuantur suorum quatiebant nocte conplexibus in
+              5. Potuere mactatur est enituntur nihil
+
+              Te pedibus nec, sit forte perfudit, **error**, cum montis confinia ad, *meae cui
+              Atlas*. Vivere veterum libidine nec enim at armenta Opheltes spatium, voce alte
+              presso. Negare vagitus mors, qui vivacia illa **torquet**.
+  topic: one
+
+two:
+  title: tom6int applis web tomcat production acces interne
+  summary: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus rhoncus finibus orci, in dictum dolor suscipit non. Vestibulum lacinia, felis ut tempus pulvinar, nibh purus pretium urna, et lobortis nunc enim sit amet nunc.
+  content: Hello
+  topic: one
+
+three:
+  title: tom6int applis web tomcat production acces interne
+  summary: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus rhoncus finibus orci, in dictum dolor suscipit non. Vestibulum lacinia, felis ut tempus pulvinar, nibh purus pretium urna, et lobortis nunc enim sit amet nunc.
+  content: Hello
+  topic: two
+
+four:
+  title: Dynet2 ( passive backup for dynet1 dynamic dhcp server)
+  summary: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus rhoncus finibus orci, in dictum dolor suscipit non. Vestibulum lacinia, felis ut tempus pulvinar, nibh purus pretium urna, et lobortis nunc enim sit amet nunc.
+  content: Hello
+  topic: three
+
+five:
+  title: HPC storage cluster (Netstor1 and Netstor2)
+  summary: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus rhoncus finibus orci, in dictum dolor suscipit non. Vestibulum lacinia, felis ut tempus pulvinar, nibh purus pretium urna, et lobortis nunc enim sit amet nunc.
+  content: Hello
+  topic: three
+
+six:
+  title: Kace (Dell Systems Management Appliance)
+  summary: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus rhoncus finibus orci, in dictum dolor suscipit non. Vestibulum lacinia, felis ut tempus pulvinar, nibh purus pretium urna, et lobortis nunc enim sit amet nunc.
+  content: Hello
+  topic: four
+
+seven:
+  title: CR Reunions Groupes Infrastruture
+  summary: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus rhoncus finibus orci, in dictum dolor suscipit non. Vestibulum lacinia, felis ut tempus pulvinar, nibh purus pretium urna, et lobortis nunc enim sit amet nunc.
+  content: Hello
+  topic: four
+

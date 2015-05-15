@@ -1,0 +1,28 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: Network
+  slug: network
+
+two:
+  name: Infrastructure
+  slug: infrastructure
+
+three:
+  name: Telephony and Communication
+  slug: telephony-and-communication
+
+four:
+  name: Web Applications
+  slug: web-applications
+
+five:
+  name: Linux Servers
+  slug: linux-servers
+
+six:
+  name: Window Servers
+  slug: window-servers
+seven:
+  name: Miscellaneous
+  slug: miscellaneous

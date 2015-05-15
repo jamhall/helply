@@ -1,0 +1,40 @@
+
+.articles-entry-create {
+  .tabnav {
+    margin-top: 10px;
+  }
+
+}
+
+.articles-search {
+  margin-bottom: 10px;
+}
+
+.articles-entries {
+  .entry {
+    margin-bottom: 10px;
+    h2 {
+      margin-top: 0;
+      a {
+        color: #222;
+      }
+    }
+    .tags {
+      a {
+        color: #3e6d8e;
+        padding: 5px;
+        font-size: 12px;
+        white-space: nowrap;
+        background: #e4edf4;
+        border: 1px solid #e4edf4;
+        display: inline-block;
+        margin: 2px 2px 2px 0;
+        border-radius: 0;
+        -webkit-transition: color 0.15s ease, background 0.15s ease, border 0.15s ease;
+        -moz-transition: color 0.15s ease, background 0.15s ease, border 0.15s ease;
+        -ms-transition: color 0.15s ease, background 0.15s ease, border 0.15s ease;
+        -o-transition: color 0.15s ease, background 0.15s ease, border 0.15s ease;
+      }
+    }
+  }
+}
