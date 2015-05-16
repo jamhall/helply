@@ -1,0 +1,5 @@
+# A sample Bowerfile
+# Check out https://github.com/42dev/bower-rails#ruby-dsl-configuration for more options
+
+asset "primer-css",  "v2.1.0"
+asset "octicons",  "*"
