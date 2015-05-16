@@ -20,8 +20,13 @@
       </a>
 
       <nav class="navbar-nav">
-        <%= link_to('Home', :root) %>
-        <a href="/about">Log in</a>
+        <% if user_signed_in? %>
+            <a href="<%= url_for(administration_path) %>" class="btn">
+              <span class="octicon octicon-gear"></span>
+              Administration
+            </a>
+            <%= link_to "Sign out", destroy_user_session_path, :method => :delete %>
+        <% end %>
       </nav>
     </div>
   </div>

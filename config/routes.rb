@@ -1,6 +1,14 @@
 Rails.application.routes.draw do
 
-  devise_for :users
+
+  devise_for :users, :skip => [:sessions, :registrations]
+  as :user do
+    get '/administration/login' => 'devise/sessions#new', :as => :new_user_session
+    post '/administration/login' => 'devise/sessions#create', :as => :user_session
+    delete '/administration/logout' => 'devise/sessions#destroy', :as => :destroy_user_session
+  end
+
+
   resources :topics
   get '/administration' => 'administration#index', as: :administration
 
