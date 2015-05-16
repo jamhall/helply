@@ -3,3 +3,4 @@
 
 asset "primer-css",  "v2.1.0"
 asset "octicons",  "*"
+asset "skeleton", "2.0.4"

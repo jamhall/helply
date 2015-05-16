@@ -12,12 +12,27 @@
 
 .articles-entries {
   .entry {
-    margin-bottom: 10px;
+    margin-bottom: 20px;
     h2 {
       margin-top: 0;
       a {
         color: #222;
       }
+    }
+    .read {
+      font-size: 11px;
+      font-weight: 600;
+      background: none;
+      border: 2px solid #eaeaea;
+      color: #3498DB;
+      padding: 7px 12px;
+      cursor: pointer;
+      -webkit-border-radius: 50px;
+      -moz-border-radius: 50px;
+      border-radius: 50px;
+      -webkit-transition: ease all 0.5s;
+      -o-transition: ease all 0.5s;
+      transition: ease all 0.5s;
     }
     .tags {
       a {

@@ -13,20 +13,17 @@
 
 <header class="navbar">
   <div class="container">
-    <a href="<%= url_for(:root) %>" class="navbar-logo">
-      <span class="mega-octicon octicon-file-text"></span>
-      Helply
-    </a>
-
-    <nav class="navbar-nav">
-      <%= link_to('Home', :root) %>
-      <%= link_to('Administration', :administration) %>
-      <a href="/about">Log in</a>
-      <a href="<%= url_for(:articles_create) %>" class="btn">
-        <span class="octicon octicon-plus"></span>
-        New article
+    <div class="row">
+      <a href="<%= url_for(:root) %>" class="navbar-logo">
+        <span class="mega-octicon octicon-file-text"></span>
+        Helply
       </a>
-    </nav>
+
+      <nav class="navbar-nav">
+        <%= link_to('Home', :root) %>
+        <a href="/about">Log in</a>
+      </nav>
+    </div>
   </div>
 </header>
 <div class="container">
