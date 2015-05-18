@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
 
-
   devise_for :users, :skip => [:sessions, :registrations]
   as :user do
     get '/administration/login' => 'devise/sessions#new', :as => :new_user_session
@@ -8,15 +7,12 @@ Rails.application.routes.draw do
     delete '/administration/logout' => 'devise/sessions#destroy', :as => :destroy_user_session
   end
 
-
-  resources :topics
   get '/administration' => 'administration#index', as: :administration
 
   get '/create' => 'articles#create', as: :articles_create
   get '/articles/:id' => 'articles#show', as: :articles_show
   get '/topics/:slug' => 'topics#show', as: :topics_show
-  get 'home/index'
-
+  get '/search' => 'search#index', as: :search
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

@@ -5,9 +5,8 @@
     <li>
       <a href="<%= url_for(topics_show_path(:slug => @article.topic.slug)) %>"><span class="icon icon-beaker"> </span> <%= @article.topic.name %>
       </a></li>
-    <li><a href="#"><%= @article.title %></a></li>
+    <li><%= @article.title %></li>
   </ul>
-
   <h1><%= @article.title %></h1>
   <hr>
   <%= markdown @article.content %>

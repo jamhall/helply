@@ -24,6 +24,8 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem "bower-rails", "~> 0.9.2"
 
+gem 'elasticsearch-model'
+gem 'elasticsearch-rails'
 
 # Use Devise for user authentication
 gem 'devise'

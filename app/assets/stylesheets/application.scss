@@ -163,6 +163,7 @@
 .search {
   border-radius: 5px;
   margin-bottom: 20px;
+  margin-left: -10px;
   background: #F0F0F0;
   width: 100%;
   padding: 10px;
@@ -174,7 +175,7 @@
     span {
       position: absolute;
       z-index: 3;
-      padding: 15px 13px;
+      padding:15px 23px;
       font-size: 16px;
     }
     input[type="text"] {
@@ -194,5 +195,8 @@
   }
   .action {
     padding-left: 10px;
+  }
+  form {
+    margin-bottom: 0;
   }
 }

@@ -4,7 +4,7 @@ class TopicsController < ApplicationController
   end
 
   def show
-    @topic = Topic.friendly.find(params[:id])
+    @topic = Topic.friendly.find(params[:slug])
     @articles = @topic.articles
   end
 
