@@ -8,6 +8,8 @@ Rails.application.routes.draw do
   end
 
   get '/administration' => 'administration#index', as: :administration
+  get '/administration/articles/published' => 'administration#articles_published', as: :administration_articles_published
+  get '/administration/articles/create' => 'administration#article_create', as: :administration_article_create
 
   get '/create' => 'articles#create', as: :articles_create
   get '/articles/:id' => 'articles#show', as: :articles_show

@@ -13,6 +13,10 @@
 .articles-entries {
   .entry {
     margin-bottom: 20px;
+    &:not(:first-child) {
+      padding-top: 10px;
+      border-top: 2px solid #eaeaea;
+    }
     h2 {
       margin-top: 0;
       a {

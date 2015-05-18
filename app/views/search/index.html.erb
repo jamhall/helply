@@ -1,2 +1,29 @@
-<h1>Search#index</h1>
-<p>Find me in app/views/search/index.html.erb</p>
+<%= render 'shared/search' %>
+<div class="container">
+  <ul class="breadcrumb">
+    <li><a href="<%= url_for(:root) %>"><span class="octicon octicon-home"> </span></a></li>
+    <li>Search</li>
+    <li><%= @q %></li>
+  </ul>
+  <% if @articles.size > 0 %>
+      <div class="flash">
+        <%= "%s articles found" % @articles.size %>
+      </div>
+      <div class="articles-entries">
+        <% @articles.each do |article| %>
+            <div class="entry">
+              <h2><%= link_to(article.title, articles_show_path(:id => article.id)) %></h2>
+
+              <p><%= article.summary %></p>
+              <%= link_to('Read Article', articles_show_path(:id => article.id), :class => 'read') %>
+            </div>
+        <% end %>
+      </div>
+  <% else %>
+      <div class="blankslate">
+        <h3>No results</h3>
+
+        <p>Sorry there are currently no articles that match your search criteria</p>
+      </div>
+  <% end %>
+</div>

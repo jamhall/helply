@@ -1,0 +1,27 @@
+<table class="table">
+  <thead>
+  <tr>
+    <th>Name</th>
+    <th>Topic</th>
+    <th>Actions</th>
+  </tr>
+  </thead>
+  <tbody>
+  <% @articles.each do |article| %>
+      <tr>
+        <td> <%= article.title %></td>
+        <td><%= article.topic.name %></td>
+        <td style="width: 140px">
+
+          <div class="btn-group">
+            <a class="btn btn-sm">Edit</a>
+            <a class="btn btn-sm btn-danger">Delete</a>
+          </div>
+
+        </td>
+
+      </tr>
+  <% end %>
+  </tbody>
+</table>
+<%= will_paginate @articles %>

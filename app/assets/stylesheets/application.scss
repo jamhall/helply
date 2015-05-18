@@ -1,5 +1,7 @@
+// Skeleton
+@import "skeleton/css/skeleton.css";
 /**
- * Primer css (exceptl ayout)
+ * Primer css (except ayout)
  */
 @import "primer-css/scss/variables";
 @import "primer-css/scss/mixins";
@@ -23,11 +25,11 @@
 // Utilities
 @import "primer-css/scss/flex-table";
 @import "primer-css/scss/truncate";
-// Skeleton
-@import "skeleton/css/skeleton.css";
+
 // Octoicons
 @import "octicons/octicons/sprockets-octicons";
 @import "articles";
+@import "administration";
 
 .navbar {
   padding-top: 1em;
@@ -98,6 +100,13 @@
   margin-bottom: 20px;
 }
 
+.flash {
+  margin-bottom: 20px;
+}
+
+.container-margin-top {
+  margin-top: 20px;
+}
 .pagination {
   background: #f1f1f1;
   border: 1px solid #e5e5e5;

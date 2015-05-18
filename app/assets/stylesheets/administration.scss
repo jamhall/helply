@@ -1,3 +1,53 @@
-// Place all the styles related to the administration controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+// no-mq (no media queries) Styles //
+
+.table {
+  display: table;
+  line-height: 1.75em;
+  font-size: .925em;
+  font-family: Open Sans, sans-serif;
+  color: #333;
+  font-weight: normal;
+  padding: 0;
+
+
+  tr {
+    text-align: left;
+    border-top: none;
+    display: table-row;
+    margin-bottom: 0;
+    padding-top: 0;
+    // IE9 Crap
+    clear: inherit;
+    float: none;
+  }
+
+  thead tr:first-child {
+    background: #efefef;
+    border-top: .09375em solid rgba(102,101,102,0.22);
+    border-bottom: .09375em solid rgba(102,101,102,0.22);
+    display: table-row;
+    height: auto;
+  }
+
+
+  th, td {
+    margin: 0;
+    padding: .5625em 1.0625em;
+    display: table-cell;
+    text-align: left;
+    // IE9 Crap
+    float: inherit;
+    clear: inherit;
+  }
+
+  tr:nth-child(n+1) {
+    border-bottom: .09375em solid rgba(102,101,102,0.11);
+  }
+
+  th {
+    font-weight: normal;
+    padding-left: 10px !important;
+    padding-right: 10px !important;
+  }
+
+}
