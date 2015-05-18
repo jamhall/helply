@@ -1,52 +1,41 @@
-<div class="row">
-  <div class="three-columns">
-    <form class="articles-search">
-      <div class="input-group">
-        <input type="text" placeholder="Have a Question? Ask or enter a search term here.">
-    <span class="input-group-button">
-      <button class="btn">
-        <span class="octicon octicon-search"></span>
-      </button>
-    </span>
-      </div>
-    </form>
-  </div>
-</div>
-<div class="row">
-  <div class="four columns">
-    <nav class="menu">
-      <span class="menu-heading">Topics</span>
-      <% @topics.each do |topic| %>
-          <%= link_to(topic.name, topics_show_path(:slug => topic.slug), :class => 'menu-item') %>
+<%= render 'shared/search' %>
+<div class="container">
+  <div class="row">
+    <div class="four columns">
+      <nav class="menu">
+        <span class="menu-heading">Topics</span>
+        <% @topics.each do |topic| %>
+            <%= link_to(topic.name, topics_show_path(:slug => topic.slug), :class => 'menu-item') %>
+        <% end %>
+      </nav>
+      <nav class="menu">
+        <span class="menu-heading"><span class="octicon octicon-mail"></span> Contact us</span>
+        <a href="#" class="menu-item">Email us</a>
+        <a href="#" class="menu-item">Phone us: +4412345 678910</a>
+      </nav>
+    </div>
+    <div class="eight columns">
+      <% if @articles.size > 0 %>
+          <div class="articles-entries">
+            <% @articles.each do |article| %>
+                <div class="entry">
+                  <h2>
+                    <%= link_to(article.title, articles_show_path(:id => article.id)) %>
+                  </h2>
+
+                  <p><%= article.summary %></p>
+                  <%= link_to('Read Article', articles_show_path(:id => article.id), :class => 'read') %>
+                </div>
+            <% end %>
+          </div>
+          <%= will_paginate @articles %>
+      <% else %>
+          <div class="blankslate">
+            <h3>There are no articles</h3>
+
+            <p>Sorry there are currently no articles at the moment</p>
+          </div>
       <% end %>
-    </nav>
-    <nav class="menu">
-      <span class="menu-heading"><span class="octicon octicon-mail"></span> Contact us</span>
-      <a href="#" class="menu-item">Email us</a>
-      <a href="#" class="menu-item">Phone us: +4412345 678910</a>
-    </nav>
-  </div>
-  <div class="eight columns">
-    <% if @articles.size > 0 %>
-        <div class="articles-entries">
-          <% @articles.each do |article| %>
-              <div class="entry">
-                <h2>
-                  <%= link_to(article.title, articles_show_path(:id => article.id)) %>
-                </h2>
-
-                <p><%= article.summary %></p>
-                <%= link_to('Read Article', articles_show_path(:id => article.id), :class => 'read') %>
-              </div>
-          <% end %>
-        </div>
-        <%= will_paginate @articles %>
-    <% else %>
-        <div class="blankslate">
-          <h3>There are no articles</h3>
-
-          <p>Sorry there are currently no articles at the moment</p>
-        </div>
-    <% end %>
+    </div>
   </div>
 </div>

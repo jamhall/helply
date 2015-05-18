@@ -1,17 +1,14 @@
-
 /**
  * Primer css (exceptl ayout)
  */
 @import "primer-css/scss/variables";
 @import "primer-css/scss/mixins";
-
 // Basecoat
 @import "primer-css/scss/base";
 @import "primer-css/scss/type";
 @import "primer-css/scss/forms";
 @import "primer-css/scss/normalize";
 @import "primer-css/scss/utility";
-
 // Components
 @import "primer-css/scss/alerts";
 @import "primer-css/scss/avatars";
@@ -23,27 +20,18 @@
 @import "primer-css/scss/filter-list";
 @import "primer-css/scss/states";
 @import "primer-css/scss/tooltips";
-
 // Utilities
 @import "primer-css/scss/flex-table";
 @import "primer-css/scss/truncate";
-
 // Skeleton
 @import "skeleton/css/skeleton.css";
-
 // Octoicons
 @import "octicons/octicons/sprockets-octicons";
-
-
-
 @import "articles";
-
-
 
 .navbar {
   padding-top: 1em;
   padding-bottom: 1em;
-  margin-bottom: 1.5em;
   text-align: center;
   background-color: #4183c4;
   a {
@@ -150,109 +138,61 @@
 }
 
 .breadcrumb {
-  $blue-gray 			    : #34495e;
-  $blue-gray-darken 	: #2c3e50;
-  $blue 				      : #3498db;
-  $blue-darken 		    : #2980b9;
-  $green 				      : #1abc9c;
-  $green-darken 		  : #16a085;
-  width: 100%;
+  margin-bottom: 20px;
   list-style: none;
-  display: inline-block;
-
-  .icon {
-    font-size: 14px;
-  }
-
-  li {
-    float: left;
-    a {
-      color: #FFF;
-      display: block;
-      background: $blue;
-      text-decoration: none;
-      position: relative;
-      height: 40px;
-      line-height: 40px;
-      padding: 0 10px 0 5px;
-      text-align: center;
-      margin-right: 23px;
-    }
-    &:nth-child(even) {
-      a {
-        background-color: $blue-darken;
-
-        &:before {
-          border-color: $blue-darken;
-          border-left-color: transparent;
-        }
-        &:after {
-          border-left-color: $blue-darken;
-        }
-      }
-    }
-    &:first-child {
-      a {
-        padding-left: 15px;
-        border-radius: 4px 0 0 4px;
-        &:before {
-          border: none;
-        }
-      }
-    }
-    &:last-child {
-      a {
-        padding-right: 15px;
-        border-radius: 0 4px 4px 0;
-        &:after {
-          border: none;
-        }
-      }
-    }
-
-    a {
-      &:before,
-      &:after {
-        content: "";
-        position: absolute;
-        top: 0;
-        border: 0 solid $blue;
-        border-width: 20px 10px;
-        width: 0;
-        height: 0;
-      }
-      &:before {
-        left: -20px;
-        border-left-color: transparent;
-      }
-      &:after {
-        left: 100%;
-        border-color: transparent;
-        border-left-color: $blue;
-      }
-      &:hover {
-        background-color: $green;
-
-        &:before {
-          border-color: $green;
-          border-left-color: transparent;
-        }
-        &:after {
-          border-left-color: $green;
-        }
-      }
-      &:active {
-        background-color: $green-darken;
-
-        &:before {
-          border-color: $green-darken;
-          border-left-color: transparent;
-        }
-        &:after {
-          border-left-color: $green-darken;
-        }
-      }
-    }
-  }
+  text-transform: uppercase;
+  border-radius: 4px;
+  font-weight: bold;
+  font-size: 1.1em;
 }
 
+.breadcrumb > li {
+  display: inline-block;
+}
+
+.breadcrumb > li + li:before {
+  padding: 0 5px;
+  color: #ccc;
+  content: "\003e";
+}
+
+.breadcrumb > .active {
+  color: #777;
+}
+
+.search {
+  border-radius: 5px;
+  margin-bottom: 20px;
+  background: #F0F0F0;
+  width: 100%;
+  padding: 10px;
+  .control {
+    width: 100%;
+    display: table;
+    vertical-align: middle;
+    border-collapse: separate;
+    span {
+      position: absolute;
+      z-index: 3;
+      padding: 15px 13px;
+      font-size: 16px;
+    }
+    input[type="text"] {
+      height: 48px;
+      width: 100%;
+      margin-top: -1px;
+      color: #4c4345;
+      background: #FFF;
+      border: none;
+      border-radius: 5px !important;
+      padding-left: 40px;
+      padding-right: 10px;
+      font-size: 16px;
+      box-shadow: inset 0 -1px 0 #ddd;
+    }
+
+  }
+  .action {
+    padding-left: 10px;
+  }
+}
