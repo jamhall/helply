@@ -1,9 +1,30 @@
-
 .articles-entry-create {
   .tabnav {
     margin-top: 10px;
   }
-
+  .tab-content {
+    padding-bottom: 10px;
+    display: none;
+    &#write {
+      display: block;
+    }
+  }
+  select {
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+  .summary {
+    display: block;
+    width: 100%;
+    min-height: 50px;
+    max-height: 150px;
+    padding: 10px;
+    resize: vertical;
+    margin-bottom: 10px;
+  }
+  .content {
+    display: none;
+  }
 }
 
 .articles-search {

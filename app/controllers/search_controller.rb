@@ -5,7 +5,6 @@ class SearchController < ApplicationController
     else
       @q = params[:q]
       @articles = Article.search(@q)
-
     end
   end
 end

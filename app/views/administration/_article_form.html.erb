@@ -1,0 +1,21 @@
+<% if not @article.nil? and @article.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@article.errors.count, "error") %> prohibited
+        this article from being saved:</h2>
+      <ul>
+        <% @article.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+<% end %>
+<div class="form-details">
+      <%= f.text_field :title, placeholder: 'Title', class: 'input-large input-block', required: 'required' %>
+  <%= collection_select(:article, :topic_id, Topic.all, :id, :name) %>
+      <%= f.text_area :summary, placeholder: 'Enter a short summary about this article...', class: 'summary', required: 'required' %>
+  <div id="epiceditor"><%= f.text_area :content, class: 'content' %></div>
+</div>
+<div class="form-actions">
+  <button type="submit" class="btn btn-primary">Save article</button>
+  <button type="button" class="btn">Cancel</button>
+</div>

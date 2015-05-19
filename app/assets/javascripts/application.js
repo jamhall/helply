@@ -12,5 +12,16 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require turbolinks
+//= require EpicEditor/epiceditor/js/epiceditor
 //= require_tree .
+
+$(document).ready(function () {
+    $("nav[class='tabnav-tabs'] a").click(function (event) {
+        $(this).addClass("selected");
+        $(this).siblings().removeClass("selected");
+        var tab = $(this).attr("href");
+        $(".tab-content").not(tab).css("display", "none");
+        $(tab).fadeIn();
+    });
+
+});

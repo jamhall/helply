@@ -9,7 +9,13 @@ Rails.application.routes.draw do
 
   get '/administration' => 'administration#index', as: :administration
   get '/administration/articles/published' => 'administration#articles_published', as: :administration_articles_published
-  get '/administration/articles/create' => 'administration#article_create', as: :administration_article_create
+  get '/administration/articles/new' => 'administration#article_new', as: :administration_article_new
+  post '/administration/articles/new' => 'administration#article_create', as: :administration_article_create
+  delete '/administration/articles/:id' => 'administration#article_delete', as: :administration_article_delete
+  post '/administration/articles/:id/publish' => 'administration#article_publish', as: :administration_article_publish
+  post '/administration/articles/:id/unpublish' => 'administration#article_unpublish', as: :administration_article_unpublish
+  get '/administration/articles/:id/edit' => 'administration#article_edit', as: :administration_article_edit
+  post '/administration/articles/:id/edit' => 'administration#article_update', as: :administration_article_update
 
   get '/create' => 'articles#create', as: :articles_create
   get '/articles/:id' => 'articles#show', as: :articles_show

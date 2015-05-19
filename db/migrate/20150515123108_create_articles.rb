@@ -3,7 +3,8 @@ class CreateArticles < ActiveRecord::Migration
     create_table :articles do |t|
       t.string :title
       t.text :content
-      t.string :summary,  length: 150
+      t.string :summary, length: 150
+      t.datetime :published_at, default: nil
       t.timestamps null: false
       t.belongs_to :topic, index: true
     end

@@ -1,9 +1,6 @@
 <div class="container container-margin-top">
   <div class="row">
-    <div class="three columns">
-      <%= render 'navigation' %>
-    </div>
-    <div class="nine columns">
+    <div class="twelve columns">
       <div class="tabnav">
         <a class="btn btn-sm right" href="<%= url_for(administration_article_create_path) %>"><span class="octicon octicon-plus"></span>
           New article</a>
@@ -12,10 +9,8 @@
           <a href="<%= url_for(administration_articles_published_path) %>" class="tabnav-tab">Published</a>
         </nav>
       </div>
+      <%= render 'shared/flash' %>
       <% if @articles.size > 0 %>
-          <div class="flash">
-            <%= "There are %d unpublished articles" % @articles.size %>
-          </div>
           <%= render 'articles_table' %>
       <% else %>
           <div class="blankslate">
