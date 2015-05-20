@@ -80,6 +80,8 @@ GEM
       multi_json
     erubis (2.7.0)
     execjs (2.5.2)
+    faker (1.4.3)
+      i18n (~> 0.5)
     faraday (0.9.1)
       multipart-post (>= 1.2, < 3)
     friendly_id (5.1.0)
@@ -189,6 +191,7 @@ DEPENDENCIES
   devise
   elasticsearch-model
   elasticsearch-rails
+  faker
   friendly_id (~> 5.1.0)
   jbuilder (~> 2.0)
   jquery-rails

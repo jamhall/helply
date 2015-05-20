@@ -25,12 +25,10 @@
 // Utilities
 @import "primer-css/scss/flex-table";
 @import "primer-css/scss/truncate";
-
 // EpicEditor
 //@import "EpicEditor/epiceditor/themes/base/epiceditor.css";
 //@import "EpicEditor/epiceditor/themes/editor/epic-dark.css";
 //@import "EpicEditor/epiceditor/themes/preview/github.css";
-
 // Octoicons
 @import "octicons/octicons/sprockets-octicons";
 @import "articles";
@@ -112,6 +110,7 @@
 .container-margin-top {
   margin-top: 20px;
 }
+
 .pagination {
   background: #f1f1f1;
   border: 1px solid #e5e5e5;
@@ -189,7 +188,7 @@
     span {
       position: absolute;
       z-index: 3;
-      padding:15px 23px;
+      padding: 15px 23px;
       font-size: 16px;
     }
     input[type="text"] {
@@ -213,4 +212,47 @@
   form {
     margin-bottom: 0;
   }
+}
+
+.autocomplete-suggestions {
+  border: 1px solid #999;
+  background: #FFF;
+  cursor: default;
+  overflow: auto;
+  -webkit-box-shadow: 1px 4px 3px rgba(50, 50, 50, 0.64);
+  -moz-box-shadow: 1px 4px 3px rgba(50, 50, 50, 0.64);
+  box-shadow: 1px 4px 3px rgba(50, 50, 50, 0.64);
+}
+
+.autocomplete-suggestion {
+  padding: 5px;
+  font-size: 1.2em;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.autocomplete-no-suggestion {
+  padding: 5px;
+  font-size: 1.2em
+}
+
+.autocomplete-selected {
+  background: #F0F0F0;
+}
+
+.autocomplete-suggestions strong {
+  font-weight: bold;
+  color: #000;
+}
+
+.autocomplete-group {
+  padding: 2px 5px;
+}
+
+.autocomplete-group strong {
+  font-weight: bold;
+  font-size: 16px;
+  color: #000;
+  display: block;
+  border-bottom: 1px solid #000;
 }

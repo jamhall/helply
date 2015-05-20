@@ -57,5 +57,7 @@ group :development, :test do
   gem 'spring'
 
   gem "better_errors"
+
+  gem 'faker'
 end
 

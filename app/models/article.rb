@@ -1,9 +1,11 @@
 require 'elasticsearch/model'
 
 class Article < ActiveRecord::Base
+  extend FriendlyId
   belongs_to :topic
   validates_presence_of :topic
   include Elasticsearch::Model
+  friendly_id :title, :use => :slugged
   scope :published, -> { where('published_at IS NOT NULL') }
   scope :unpublished, -> { where('published_at IS  NULL') }
   validates :title, presence: true
@@ -12,6 +14,10 @@ class Article < ActiveRecord::Base
   validates :topic, presence: true
 
   def is_published?
+    true unless published_at.nil?
+  end
+
+  def published
     true unless published_at.nil?
   end
 

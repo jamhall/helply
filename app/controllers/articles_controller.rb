@@ -5,5 +5,7 @@ class ArticlesController < ApplicationController
     else
       @article = Article.published.find(params[:id])
     end
+    slug = params[:slug]
+    redirect_to(articles_show_url(:id => @article.id, :slug => @article.slug)) unless slug == @article.slug
   end
 end

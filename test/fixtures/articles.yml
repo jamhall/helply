@@ -49,40 +49,49 @@ one:
               Atlas*. Vivere veterum libidine nec enim at armenta Opheltes spatium, voce alte
               presso. Negare vagitus mors, qui vivacia illa **torquet**.
   topic: one
+  slug: nil
 
 two:
   title: tom6int applis web tomcat production acces interne
   summary: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus rhoncus finibus orci, in dictum dolor suscipit non. Vestibulum lacinia, felis ut tempus pulvinar, nibh purus pretium urna, et lobortis nunc enim sit amet nunc.
   content: Hello
   topic: one
+  slug: nil
+
 
 three:
-  title: tom6int applis web tomcat production acces interne
+  title: Test help and support topic
   summary: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus rhoncus finibus orci, in dictum dolor suscipit non. Vestibulum lacinia, felis ut tempus pulvinar, nibh purus pretium urna, et lobortis nunc enim sit amet nunc.
   content: Hello
   topic: two
+  slug: nil
 
 four:
   title: Dynet2 ( passive backup for dynet1 dynamic dhcp server)
   summary: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus rhoncus finibus orci, in dictum dolor suscipit non. Vestibulum lacinia, felis ut tempus pulvinar, nibh purus pretium urna, et lobortis nunc enim sit amet nunc.
   content: Hello
   topic: three
+  slug: nil
 
 five:
   title: HPC storage cluster (Netstor1 and Netstor2)
   summary: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus rhoncus finibus orci, in dictum dolor suscipit non. Vestibulum lacinia, felis ut tempus pulvinar, nibh purus pretium urna, et lobortis nunc enim sit amet nunc.
   content: Hello
   topic: three
+  slug: nil
 
 six:
   title: Kace (Dell Systems Management Appliance)
   summary: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus rhoncus finibus orci, in dictum dolor suscipit non. Vestibulum lacinia, felis ut tempus pulvinar, nibh purus pretium urna, et lobortis nunc enim sit amet nunc.
   content: Hello
   topic: four
+  slug: nil
 
 seven:
-  title: CR Reunions Groupes Infrastruture
+  title: Any quibble takes the lowest pub under the grandfather.
   summary: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus rhoncus finibus orci, in dictum dolor suscipit non. Vestibulum lacinia, felis ut tempus pulvinar, nibh purus pretium urna, et lobortis nunc enim sit amet nunc.
   content: Hello
   topic: four
+  slug: nil
+
 

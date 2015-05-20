@@ -5,3 +5,15 @@ User.create!([
                   last_sign_in_at: "2015-02-06 14:02:10", current_sign_in_ip: "127.0.0.1", last_sign_in_ip: "127.0.0.1"
                  }
              ])
+
+Topic.create([{name: 'Network'},
+              {name: 'Infrastructure'},
+              {name: 'Telephony and Communication'},
+              {name: 'Web Applications'},
+              {name: 'Linux Servers'},
+              {name: 'Window Servers'},
+              {name: 'Miscellaneous'}])
+
+(1..20).each do |i|
+  Article.create ({title: Faker::Lorem.sentence, summary: Faker::Lorem.sentence(3), content: Faker::Lorem.paragraphs(5).join("\n"), topic: Topic.offset(rand(Topic.count)).first })
+end

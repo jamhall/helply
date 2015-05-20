@@ -9,7 +9,7 @@
   <tbody>
   <% @articles.each do |article| %>
       <tr>
-        <td><%= link_to(article.title, articles_show_path(article)) %></td>
+        <td><%= link_to(article.title, articles_show_path(:id => article.id, :slug => article.slug)) %></td>
         <td><%= article.topic.name %></td>
         <td style="width: 250px">
           <div class="btn-group">
@@ -17,7 +17,7 @@
             <% if (article.is_published?) %>
                 <%= link_to 'Unpublish', administration_article_unpublish_path(article.id), :method => :post, :class => 'btn btn-sm btn-danger' %>
             <% else %>
-                <%= link_to 'Publish', administration_article_publish_path(article), :method => :post, :class => 'btn btn-sm' %>
+                <%= link_to 'Publish', administration_article_publish_path(article.id), :method => :post, :class => 'btn btn-sm' %>
             <% end %>
             <%= link_to 'Delete', administration_article_delete_path(:id => article.id), :method => :delete, :class => 'btn btn-sm btn-danger', :data => {:confirm => "You Sure?"} %>
           </div>

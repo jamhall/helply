@@ -17,12 +17,14 @@ ActiveRecord::Schema.define(version: 20150516121104) do
     t.string   "title",        limit: 255
     t.text     "content",      limit: 65535
     t.string   "summary",      limit: 255
+    t.string   "slug",         limit: 255,   null: false
     t.datetime "published_at"
     t.datetime "created_at",                 null: false
     t.datetime "updated_at",                 null: false
     t.integer  "topic_id",     limit: 4
   end
 
+  add_index "articles", ["slug"], name: "index_articles_on_slug", unique: true, using: :btree
   add_index "articles", ["topic_id"], name: "index_articles_on_topic_id", using: :btree
 
   create_table "topics", force: :cascade do |t|

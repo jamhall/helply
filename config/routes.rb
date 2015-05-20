@@ -18,7 +18,7 @@ Rails.application.routes.draw do
   post '/administration/articles/:id/edit' => 'administration#article_update', as: :administration_article_update
 
   get '/create' => 'articles#create', as: :articles_create
-  get '/articles/:id' => 'articles#show', as: :articles_show
+  get '/articles/:id/:slug' => 'articles#show', as: :articles_show
   get '/topics/:slug' => 'topics#show', as: :topics_show
   get '/search' => 'search#index', as: :search
   # The priority is based upon order of creation: first created -> highest priority.

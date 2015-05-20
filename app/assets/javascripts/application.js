@@ -13,6 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require EpicEditor/epiceditor/js/epiceditor
+//= require 'devbridge-autocomplete/dist/jquery.autocomplete'
 //= require_tree .
 
 $(document).ready(function () {
@@ -24,4 +25,22 @@ $(document).ready(function () {
         $(tab).fadeIn();
     });
 
+    $('#search').autocomplete({
+        serviceUrl: '/search.json',
+        minChars: 3,
+        noCache: true,
+        paramName: 'q',
+        dataType: 'json',
+        preventBadQueries: false,
+        transformResult: function (response) {
+            return {
+                suggestions: $.map(response, function (result) {
+                    return {value: result.title, data: result};
+                })
+            };
+        },
+        onSelect: function (suggestion) {
+            location.href = '/articles/{id}/{slug}'.replace('{id}', suggestion.data.id).replace('{slug}', suggestion.data.slug);
+        }
+    });
 });
