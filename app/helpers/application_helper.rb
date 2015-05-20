@@ -2,24 +2,24 @@ module ApplicationHelper
   def markdown(text)
     render_options = {
         # will remove from the output HTML tags inputted by user
-        filter_html: true,
+        filter_html: false,
         # will insert <br /> tags in paragraphs where are newlines
         # (ignored by default)
         hard_wrap: true,
         # hash for extra link options, for example 'nofollow'
-        link_attributes: {rel: 'nofollow'}
+        link_attributes: {rel: 'nofollow'},
         # more
         # will remove <img> tags from output
         # no_images: true
         # will remove <a> tags from output
         # no_links: true
         # will remove <style> tags from output
-        # no_styles: true
+        no_styles: true
         # generate links for only safe protocols
         # safe_links_only: true
         # and more ... (prettify, with_toc_data, xhtml)
     }
-    renderer = Redcarpet::Render::HTML.new()
+    renderer = Redcarpet::Render::HTML.new(render_options)
 
     extensions = {
         #will parse links without need of enclosing them
