@@ -1,13 +1,14 @@
 .search {
-  border-radius: 5px;
   margin-bottom: 20px;
-  margin-left: -10px;
   background: #F0F0F0;
   width: 100%;
-  padding: 10px;
   .control {
+    padding-top: 10px;
+    padding-bottom: 10px;
+
     width: 100%;
     display: table;
+    margin-left: -10px;
     vertical-align: middle;
     border-collapse: separate;
     span {
