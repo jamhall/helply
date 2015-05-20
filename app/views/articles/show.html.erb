@@ -1,14 +1,18 @@
 <%= render 'shared/search' %>
 <div class="container">
-  <ul class="breadcrumb">
-    <li><a href="<%= url_for(:root) %>"><span class="octicon octicon-home"> </span></a></li>
-    <li>
-      <a href="<%= url_for(topics_show_path(:slug => @article.topic.slug)) %>"><span class="icon icon-beaker"> </span> <%= @article.topic.name %>
-      </a></li>
-    <li><%= @article.title %></li>
-  </ul>
-  <h1><%= @article.title %></h1>
-  <hr>
-  <%= markdown @article.content %>
+  <div class="article-show">
+    <ul class="breadcrumb">
+      <li><a href="<%= url_for(:root) %>"><span class="octicon octicon-home"> </span></a></li>
+      <li>
+        <a href="<%= url_for(topics_show_path(:slug => @article.topic.slug)) %>"><span class="icon icon-beaker"> </span> <%= @article.topic.name %>
+        </a></li>
+      <li><%= @article.title %></li>
+    </ul>
+    <h1><%= @article.title %></h1>
+    <time>Last Updated - Oct 03, 2014 01:58PM PDT</time>
+    <div class="content">
+      <%= markdown @article.content %>
+    </div>
+  </div>
 </div>
 

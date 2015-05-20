@@ -21,7 +21,7 @@
     font-weight: 600;
     background: none;
     border: 2px solid #eaeaea;
-    color: #3498DB;
+    color: $link-color;
     padding: 7px 12px;
     cursor: pointer;
     @include border-radius(40px);

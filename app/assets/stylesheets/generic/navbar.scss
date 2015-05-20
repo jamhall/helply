@@ -2,17 +2,13 @@
   padding-top: 1em;
   padding-bottom: 1em;
   text-align: center;
-  background-color: #4183c4;
+  background-color: $navbar-bg-color;
   a {
-    color: white;
+    color: $navbar-color;
     font-weight: bold;
     &:hover {
-      color: #fff;
+      color: $navbar-link-hover-color;
       text-decoration: none;
-    }
-    &.btn {
-      color: #333;
-      margin-top: -5px;
     }
   }
   .navbar-logo {
@@ -44,10 +40,6 @@
     &:not(:last-child) {
       margin-right: 1.25em;
     }
-  }
-  .active {
-    color: #fff;
-    font-weight: 500;
   }
 }
 

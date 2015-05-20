@@ -13,23 +13,21 @@
 @import "primer-css/scss/utility";
 // Components
 @import "primer-css/scss/alerts";
-@import "primer-css/scss/avatars";
 @import "primer-css/scss/blankslate";
 @import "primer-css/scss/counter";
 @import "primer-css/scss/buttons";
 @import "primer-css/scss/menu";
 @import "primer-css/scss/tabnav";
 @import "primer-css/scss/filter-list";
-@import "primer-css/scss/states";
-@import "primer-css/scss/tooltips";
 // Utilities
 @import "primer-css/scss/flex-table";
 @import "primer-css/scss/truncate";
 // Octoicons
 @import "octicons/octicons/sprockets-octicons";
-
+@import url(http://fonts.googleapis.com/css?family=Open+Sans);
 // Application
 @import "base/mixins";
+@import "base/variables";
 @import "base/layout";
 @import "generic/autocomplete";
 @import "generic/breadcrumbs";
@@ -38,7 +36,6 @@
 @import "generic/navbar";
 @import "generic/pagination";
 @import "generic/search";
-
 @import "home";
 @import "articles";
 @import "administration";
