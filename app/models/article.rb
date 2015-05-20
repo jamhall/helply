@@ -1,8 +1,10 @@
 require 'elasticsearch/model'
 
 class Article < ActiveRecord::Base
+  is_impressionable :counter_cache => true, :unique => true
   extend FriendlyId
   belongs_to :topic
+  has_many :impression, :as=>:impressionable
   validates_presence_of :topic
   include Elasticsearch::Model
   friendly_id :title, :use => :slugged
@@ -18,8 +20,19 @@ class Article < ActiveRecord::Base
   end
 
   def published
-    true unless published_at.nil?
+    true unless pu
+    blished_at.nil?
   end
+
+
+  def impression_count
+    impressions.size
+  end
+
+  def unique_impression_count
+    impressions.group(:ip_address).size
+  end
+
 
   after_save {
     if self.published_at.nil?

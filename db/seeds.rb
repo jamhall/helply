@@ -14,6 +14,8 @@ Topic.create([{name: 'Network'},
               {name: 'Window Servers'},
               {name: 'Miscellaneous'}])
 
-(1..20).each do |i|
-  Article.create ({title: Faker::Lorem.sentence, summary: Faker::Lorem.sentence(3), content: Faker::Lorem.paragraphs(5).join("\n"), topic: Topic.offset(rand(Topic.count)).first })
+(1..50).each do |i|
+  Article.create ({title: Faker::Lorem.sentence, summary: Faker::Lorem.sentence(3), content: Faker::Lorem.paragraphs(5).join("\n"), published_at: Time.now,  topic: Topic.offset(rand(Topic.count)).first })
 end
+
+puts "Done!"

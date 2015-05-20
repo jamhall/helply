@@ -11,21 +11,47 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150516121104) do
+ActiveRecord::Schema.define(version: 20150520203039) do
 
   create_table "articles", force: :cascade do |t|
-    t.string   "title",        limit: 255
-    t.text     "content",      limit: 65535
-    t.string   "summary",      limit: 255
-    t.string   "slug",         limit: 255,   null: false
+    t.string   "title",             limit: 255
+    t.text     "content",           limit: 65535
+    t.string   "summary",           limit: 255
+    t.string   "slug",              limit: 255,               null: false
     t.datetime "published_at"
-    t.datetime "created_at",                 null: false
-    t.datetime "updated_at",                 null: false
-    t.integer  "topic_id",     limit: 4
+    t.datetime "created_at",                                  null: false
+    t.datetime "updated_at",                                  null: false
+    t.integer  "topic_id",          limit: 4
+    t.integer  "impressions_count", limit: 4,     default: 0
   end
 
   add_index "articles", ["slug"], name: "index_articles_on_slug", unique: true, using: :btree
   add_index "articles", ["topic_id"], name: "index_articles_on_topic_id", using: :btree
+
+  create_table "impressions", force: :cascade do |t|
+    t.string   "impressionable_type", limit: 255
+    t.integer  "impressionable_id",   limit: 4
+    t.integer  "user_id",             limit: 4
+    t.string   "controller_name",     limit: 255
+    t.string   "action_name",         limit: 255
+    t.string   "view_name",           limit: 255
+    t.string   "request_hash",        limit: 255
+    t.string   "ip_address",          limit: 255
+    t.string   "session_hash",        limit: 255
+    t.text     "message",             limit: 65535
+    t.text     "referrer",            limit: 65535
+    t.datetime "created_at",                        null: false
+    t.datetime "updated_at",                        null: false
+  end
+
+  add_index "impressions", ["controller_name", "action_name", "ip_address"], name: "controlleraction_ip_index", using: :btree
+  add_index "impressions", ["controller_name", "action_name", "request_hash"], name: "controlleraction_request_index", using: :btree
+  add_index "impressions", ["controller_name", "action_name", "session_hash"], name: "controlleraction_session_index", using: :btree
+  add_index "impressions", ["impressionable_type", "impressionable_id", "ip_address"], name: "poly_ip_index", using: :btree
+  add_index "impressions", ["impressionable_type", "impressionable_id", "request_hash"], name: "poly_request_index", using: :btree
+  add_index "impressions", ["impressionable_type", "impressionable_id", "session_hash"], name: "poly_session_index", using: :btree
+  add_index "impressions", ["impressionable_type", "message", "impressionable_id"], name: "impressionable_type_message_index", length: {"impressionable_type"=>nil, "message"=>255, "impressionable_id"=>nil}, using: :btree
+  add_index "impressions", ["user_id"], name: "index_impressions_on_user_id", using: :btree
 
   create_table "topics", force: :cascade do |t|
     t.string   "name",       limit: 255

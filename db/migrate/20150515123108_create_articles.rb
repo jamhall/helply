@@ -8,6 +8,7 @@ class CreateArticles < ActiveRecord::Migration
       t.datetime :published_at, default: nil
       t.timestamps null: false
       t.belongs_to :topic, index: true
+      t.integer :impressions_count, :default => 0
     end
     add_index :articles, :slug, unique: true
   end

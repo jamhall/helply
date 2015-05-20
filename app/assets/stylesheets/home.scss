@@ -2,3 +2,24 @@
   padding-bottom: 10px;
   font-size: 1.2em;
 }
+
+.browse-topics-header {
+  border-bottom: 1px solid #E5E5E5;
+  padding-bottom: 10px;
+  color: #444;
+  position: relative;
+  margin-bottom: 0px;
+}
+
+.home-popular-articles, .home-recently-updated-articles, .home-recently-added-articles {
+  h1 {
+    border-bottom: 1px solid #E5E5E5;
+    padding-bottom: 10px;
+    color: #444;
+    margin: 0 0 20px;
+    position: relative;
+  }
+  ul {
+    list-style-type: none;
+  }
+}

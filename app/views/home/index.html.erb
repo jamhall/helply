@@ -1,10 +1,7 @@
 <%= render 'shared/search' %>
 <div class="container">
   <div class="row">
-    <div class="flash flash-no-margin-bottom">
-      Looking for more information or need a hand?
-      Use the search box above, or dive into a topic below for instant answers!
-    </div>
+    <h1 class="browse-topics-header">Browse topics</h1>
   </div>
   <% @topics.in_groups_of(3, false) do |group| %>
       <div class="row">
@@ -29,4 +26,36 @@
         <% end %>
       </div>
   <% end %>
+  <div class="row">
+    <div class="four columns">
+      <div class="home-popular-articles">
+        <h1>Popular articles</h1>
+        <ul>
+          <% @popular_articles.each do |article| %>
+              <li><%= link_to(article.title, articles_show_path(:id => article.id, :slug => article.slug)) %></li>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+    <div class="four columns">
+      <div class="home-recently-updated-articles">
+        <h1>Recently Updated</h1>
+        <ul>
+          <% @recently_updated_articles.each do |article| %>
+              <li><%= link_to(article.title, articles_show_path(:id => article.id, :slug => article.slug)) %></li>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+    <div class="four columns">
+      <div class="home-recently-added-articles">
+        <h1>Recently Added</h1>
+        <ul>
+          <% @recently_added_articles.each do |article| %>
+              <li><%= link_to(article.title, articles_show_path(:id => article.id, :slug => article.slug)) %></li>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+  </div>
 </div>
