@@ -1,7 +1,7 @@
 <div class="container">
   <h1>Edit article</h1>
   <%= render 'shared/flash' %>
-  <%= form_for(:article, url: admin_article_update_path(@article), html: {class: 'articles-entry-create'}) do |f| %>
+  <%= form_for(:article, url: admin_article_update_path(@article.id), html: {class: 'articles-entry-create'}) do |f| %>
       <%= render :partial => 'form', :locals => {:f => f} %>
   <% end %>
 </div>

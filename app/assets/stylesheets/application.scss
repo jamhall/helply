@@ -25,6 +25,9 @@
 // Octoicons
 @import "octicons/octicons/sprockets-octicons";
 @import url(http://fonts.googleapis.com/css?family=Open+Sans);
+
+// Primer markdown
+@import "primer-markdown/components/markdown";
 // Application
 @import "base/mixins";
 @import "base/variables";

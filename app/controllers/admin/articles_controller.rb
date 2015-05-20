@@ -32,7 +32,7 @@ class Admin::ArticlesController < Admin::AdminController
     @article = Article.find(params[:id])
     if @article.update_attributes(article_params)
       flash[:success] = "Successfully updated"
-      redirect_to admin_article_edit_path(@article)
+      redirect_to admin_article_edit_path(@article.id)
     else
       render 'article_edit'
     end
