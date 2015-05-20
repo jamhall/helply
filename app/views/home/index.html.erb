@@ -1,9 +1,9 @@
 <%= render 'shared/search' %>
 <div class="container">
   <div class="row">
-    <div class="home-help">
+    <div class="flash flash-no-margin-bottom">
       Looking for more information or need a hand?
-      Use the Search above, or dive into a category below for instant answers!
+      Use the search box above, or dive into a category below for instant answers!
     </div>
   </div>
   <% @topics.in_groups_of(3, false) do |group| %>
