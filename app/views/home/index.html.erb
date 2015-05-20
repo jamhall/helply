@@ -12,16 +12,16 @@
             <div class="four columns">
               <div class="topic-panel">
                 <h2><%= link_to(topic.name, topics_show_path(:slug => topic.slug)) %></h2>
-                <% if topic.articles.size == 0 %>
+                <% if topic.articles.published.size == 0 %>
                     <p>There are no articles for this topic</p>
                 <% else %>
                     <ul>
-                      <% topic.articles.each do |article| %>
+                      <% topic.articles.published.each do |article| %>
                           <li><%= link_to(article.title, articles_show_path(:id => article.id, :slug => article.slug)) %></li>
                       <% end %>
                     </ul>
                     <a class="view-all" href="<%= url_for topics_show_path(:slug => topic.slug) %>">View all
-                      <span class="counter"><%= topic.articles.size %></span>
+                      <span class="counter"><%= topic.articles.published.size %></span>
                     </a>
                 <% end %>
               </div>

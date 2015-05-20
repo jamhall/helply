@@ -1,6 +1,0 @@
-<div class="container">
-  <h1>New article</h1>
-  <%= form_for :article, url: administration_article_create_path, html: {class: 'articles-entry-create'} do |f| %>
-      <%= render :partial => 'article_form', :locals => {:f => f} %>
-  <% end %>
-</div>

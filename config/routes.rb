@@ -2,20 +2,24 @@ Rails.application.routes.draw do
 
   devise_for :users, :skip => [:sessions, :registrations]
   as :user do
-    get '/administration/login' => 'devise/sessions#new', :as => :new_user_session
-    post '/administration/login' => 'devise/sessions#create', :as => :user_session
-    delete '/administration/logout' => 'devise/sessions#destroy', :as => :destroy_user_session
+    get '/admin/login' => 'devise/sessions#new', :as => :new_user_session
+    post '/admin/login' => 'devise/sessions#create', :as => :user_session
+    delete '/admin/logout' => 'devise/sessions#destroy', :as => :destroy_user_session
   end
 
-  get '/administration' => 'administration#index', as: :administration
-  get '/administration/articles/published' => 'administration#articles_published', as: :administration_articles_published
-  get '/administration/articles/new' => 'administration#article_new', as: :administration_article_new
-  post '/administration/articles/new' => 'administration#article_create', as: :administration_article_create
-  delete '/administration/articles/:id' => 'administration#article_delete', as: :administration_article_delete
-  post '/administration/articles/:id/publish' => 'administration#article_publish', as: :administration_article_publish
-  post '/administration/articles/:id/unpublish' => 'administration#article_unpublish', as: :administration_article_unpublish
-  get '/administration/articles/:id/edit' => 'administration#article_edit', as: :administration_article_edit
-  post '/administration/articles/:id/edit' => 'administration#article_update', as: :administration_article_update
+  namespace :admin do
+    get '/' => 'admin#index'
+    get '/articles/published' => 'articles#published', as: :articles_published
+    get '/articles/new' => 'articles#new', as: :article_new
+    post '/articles/new' => 'articles#create', as: :article_create
+    delete '/articles/:id' => 'articles#delete', as: :article_delete
+    post '/articles/:id/publish' => 'articles#publish', as: :article_publish
+    post '/articles/:id/unpublish' => 'articles#unpublish', as: :article_unpublish
+    get '/articles/:id/edit' => 'articles#edit', as: :article_edit
+    post '/articles/:id/edit' => 'articles#update', as: :article_update
+
+  end
+
 
   get '/create' => 'articles#create', as: :articles_create
   get '/articles/:id/:slug' => 'articles#show', as: :articles_show

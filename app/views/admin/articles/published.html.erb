@@ -2,16 +2,16 @@
   <div class="row">
     <div class="twelve columns">
       <div class="tabnav">
-        <a class="btn btn-sm right" href="<%= url_for(administration_article_create_path) %>"><span class="octicon octicon-plus"></span>
+        <a class="btn btn-sm right" href="<%= url_for(admin_article_create_path) %>"><span class="octicon octicon-plus"></span>
           New article</a>
         <nav class="tabnav-tabs">
-          <a href="<%= url_for(administration_path) %>" class="tabnav-tab">Unpublished</a>
-          <a href="<%= url_for(administration_articles_published_path) %>" class="tabnav-tab selected">Published</a>
+          <a href="<%= url_for(admin_path) %>" class="tabnav-tab">Unpublished</a>
+          <a href="<%= url_for(admin_articles_published_path) %>" class="tabnav-tab selected">Published</a>
         </nav>
       </div>
       <%= render 'shared/flash' %>
       <% if @articles.size > 0 %>
-          <%= render 'articles_table' %>
+          <%= render 'table' %>
       <% else %>
           <div class="blankslate">
             <h3>There are no published articles. Why not publish one?</h3>
