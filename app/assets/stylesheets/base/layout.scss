@@ -1,0 +1,29 @@
+.container-margin-top {
+  margin-top: 20px;
+}
+
+.contact-footer {
+  margin-top: 20px;
+  padding-bottom: 20px;
+  width: 100%;
+  box-shadow: 0px -1px 0px 0px #EBEDED;
+  background: #F9F9F9;
+  .header {
+    padding-top: 5px;
+    padding-bottom: 10px;
+    img {
+      height: 30px;
+      vertical-align: middle;
+    }
+
+    font-size: 1.6em;
+    color: #2F363F;
+    line-height: 48px;
+    position: relative;
+    text-align: center;
+  }
+  p {
+    text-align: center;
+    font-size: 1.2em;
+  }
+}

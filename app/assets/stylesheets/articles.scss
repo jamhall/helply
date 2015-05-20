@@ -52,12 +52,8 @@
       color: #3498DB;
       padding: 7px 12px;
       cursor: pointer;
-      -webkit-border-radius: 50px;
-      -moz-border-radius: 50px;
-      border-radius: 50px;
-      -webkit-transition: ease all 0.5s;
-      -o-transition: ease all 0.5s;
-      transition: ease all 0.5s;
+      @include border-radius(40px);
+      @include transition(ease all 0.5s);
     }
     .tags {
       a {

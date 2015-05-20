@@ -1,41 +1,32 @@
 <%= render 'shared/search' %>
 <div class="container">
   <div class="row">
-    <div class="four columns">
-      <nav class="menu">
-        <span class="menu-heading">Topics</span>
-        <% @topics.each do |topic| %>
-            <%= link_to(topic.name, topics_show_path(:slug => topic.slug), :class => 'menu-item') %>
-        <% end %>
-      </nav>
-      <nav class="menu">
-        <span class="menu-heading"><span class="octicon octicon-mail"></span> Contact us</span>
-        <a href="#" class="menu-item">Email us</a>
-        <a href="#" class="menu-item">Phone us: +4412345 678910</a>
-      </nav>
-    </div>
-    <div class="eight columns">
-      <% if @articles.size > 0 %>
-          <div class="articles-entries">
-            <% @articles.each do |article| %>
-                <div class="entry">
-                  <h2>
-                    <%= link_to(article.title, articles_show_path(:id => article.id, :slug => article.slug)) %>
-                  </h2>
-
-                  <p><%= article.summary %></p>
-                  <%= link_to('Read Article', articles_show_path(:id => article.id, :slug => article.slug), :class => 'read') %>
-                </div>
-            <% end %>
-          </div>
-          <%= will_paginate @articles %>
-      <% else %>
-          <div class="blankslate">
-            <h3>There are no articles</h3>
-
-            <p>Sorry there are currently no articles at the moment</p>
-          </div>
-      <% end %>
+    <div class="home-help">
+      Looking for more information or need a hand?
+      Use the Search above, or dive into a category below for instant answers!
     </div>
   </div>
+  <% @topics.in_groups_of(3, false) do |group| %>
+      <div class="row">
+        <% group.each do |topic| %>
+            <div class="four columns">
+              <div class="topic-panel">
+                <h2><%= link_to(topic.name, topics_show_path(:slug => topic.slug)) %></h2>
+                <% if topic.articles.size == 0 %>
+                    <p>There are no articles for this topic</p>
+                <% else %>
+                    <ul>
+                      <% topic.articles.each do |article| %>
+                          <li><%= link_to(article.title, articles_show_path(:id => article.id, :slug => article.slug)) %></li>
+                      <% end %>
+                    </ul>
+                    <a class="view-all" href="<%= url_for topics_show_path(:slug => topic.slug) %>">View all
+                      <span class="counter"><%= topic.articles.size %></span>
+                    </a>
+                <% end %>
+              </div>
+            </div>
+        <% end %>
+      </div>
+  <% end %>
 </div>

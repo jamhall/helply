@@ -1,0 +1,40 @@
+.search {
+  border-radius: 5px;
+  margin-bottom: 20px;
+  margin-left: -10px;
+  background: #F0F0F0;
+  width: 100%;
+  padding: 10px;
+  .control {
+    width: 100%;
+    display: table;
+    vertical-align: middle;
+    border-collapse: separate;
+    span {
+      position: absolute;
+      z-index: 3;
+      padding: 15px 23px;
+      font-size: 16px;
+    }
+    input[type="text"] {
+      height: 48px;
+      width: 100%;
+      margin-top: -1px;
+      color: #4c4345;
+      background: #FFF;
+      border: none;
+      border-radius: 5px !important;
+      padding-left: 40px;
+      padding-right: 10px;
+      font-size: 16px;
+      box-shadow: inset 0 -1px 0 #ddd;
+    }
+
+  }
+  .action {
+    padding-left: 10px;
+  }
+  form {
+    margin-bottom: 0;
+  }
+}

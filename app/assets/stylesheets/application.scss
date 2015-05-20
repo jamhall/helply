@@ -1,7 +1,7 @@
 // Skeleton
 @import "skeleton/css/skeleton.css";
 /**
- * Primer css (except ayout)
+ * Primer css (except layout)
  */
 @import "primer-css/scss/variables";
 @import "primer-css/scss/mixins";
@@ -25,234 +25,30 @@
 // Utilities
 @import "primer-css/scss/flex-table";
 @import "primer-css/scss/truncate";
-// EpicEditor
-//@import "EpicEditor/epiceditor/themes/base/epiceditor.css";
-//@import "EpicEditor/epiceditor/themes/editor/epic-dark.css";
-//@import "EpicEditor/epiceditor/themes/preview/github.css";
 // Octoicons
 @import "octicons/octicons/sprockets-octicons";
+
+// Application
+@import "base/mixins";
+@import "base/layout";
+@import "generic/autocomplete";
+@import "generic/breadcrumbs";
+@import "generic/flash";
+@import "generic/form";
+@import "generic/navbar";
+@import "generic/pagination";
+@import "generic/search";
+
+@import "home";
 @import "articles";
 @import "administration";
+@import "topics";
 
-.navbar {
-  padding-top: 1em;
-  padding-bottom: 1em;
-  text-align: center;
-  background-color: #4183c4;
-  a {
-    color: rgba(255, 255, 255, 0.5);
-    &:hover {
-      color: #fff;
-      text-decoration: none;
-    }
-    &.btn {
-      color: #333;
-      margin-top: -5px;
-    }
-  }
-  .navbar-logo {
-    display: inline-block;
-    font-size: 1.4em;
-    color: #fff;
-    .mega-octicon {
-      float: left;
-      margin-right: .5em;
-    }
-  }
-}
 
-@media (min-width: 34em) {
-  .navbar {
-    text-align: left;
-    .navbar-logo {
-      float: left;
-    }
-  }
-}
 
-.navbar-nav {
-  margin-top: 1em;
-  font-size: 1em;
-  a {
-    display: inline-block;
-    &:not(:last-child) {
-      margin-right: 1.25em;
-    }
-  }
-  .active {
-    color: #fff;
-    font-weight: 500;
-  }
-}
 
-@media (max-width: 34em) {
-  .navbar-nav {
-    padding-top: 1em;
-    border-top: 0.075em solid rgba(255, 255, 255, 0.25);
-  }
-}
 
-@media (min-width: 34em) {
-  .navbar-nav {
-    float: right;
-    margin-top: .5em;
-  }
-}
 
-.form-details {
-  margin-bottom: 20px;
-}
 
-.flash {
-  margin-bottom: 20px;
-}
 
-.container-margin-top {
-  margin-top: 20px;
-}
 
-.pagination {
-  background: #f1f1f1;
-  border: 1px solid #e5e5e5;
-  text-align: center;
-  padding: 1em;
-  cursor: default;
-}
-
-.pagination a, .pagination span {
-  padding: 0.2em 0.3em;
-}
-
-.pagination .disabled {
-  color: #aaaaaa;
-}
-
-.pagination .current {
-  font-style: normal;
-  font-weight: bold;
-  background-color: #bebebe;
-  display: inline-block;
-  width: 1.4em;
-  height: 1.4em;
-  line-height: 1.5;
-  -moz-border-radius: 1em;
-  -webkit-border-radius: 1em;
-  border-radius: 1em;
-  text-shadow: rgba(255, 255, 255, 0.8) 1px 1px 1px;
-}
-
-.pagination a {
-  text-decoration: none;
-  color: black;
-}
-
-.pagination a:hover, .pagination a:focus {
-  text-decoration: underline;
-}
-
-.breadcrumb {
-  margin-bottom: 20px;
-  list-style: none;
-  text-transform: uppercase;
-  border-radius: 4px;
-  font-weight: bold;
-  font-size: 1.1em;
-}
-
-.breadcrumb > li {
-  display: inline-block;
-}
-
-.breadcrumb > li + li:before {
-  padding: 0 5px;
-  color: #ccc;
-  content: "\003e";
-}
-
-.breadcrumb > .active {
-  color: #777;
-}
-
-.search {
-  border-radius: 5px;
-  margin-bottom: 20px;
-  margin-left: -10px;
-  background: #F0F0F0;
-  width: 100%;
-  padding: 10px;
-  .control {
-    width: 100%;
-    display: table;
-    vertical-align: middle;
-    border-collapse: separate;
-    span {
-      position: absolute;
-      z-index: 3;
-      padding: 15px 23px;
-      font-size: 16px;
-    }
-    input[type="text"] {
-      height: 48px;
-      width: 100%;
-      margin-top: -1px;
-      color: #4c4345;
-      background: #FFF;
-      border: none;
-      border-radius: 5px !important;
-      padding-left: 40px;
-      padding-right: 10px;
-      font-size: 16px;
-      box-shadow: inset 0 -1px 0 #ddd;
-    }
-
-  }
-  .action {
-    padding-left: 10px;
-  }
-  form {
-    margin-bottom: 0;
-  }
-}
-
-.autocomplete-suggestions {
-  border: 1px solid #999;
-  background: #FFF;
-  cursor: default;
-  overflow: auto;
-  -webkit-box-shadow: 1px 4px 3px rgba(50, 50, 50, 0.64);
-  -moz-box-shadow: 1px 4px 3px rgba(50, 50, 50, 0.64);
-  box-shadow: 1px 4px 3px rgba(50, 50, 50, 0.64);
-}
-
-.autocomplete-suggestion {
-  padding: 5px;
-  font-size: 1.2em;
-  white-space: nowrap;
-  overflow: hidden;
-}
-
-.autocomplete-no-suggestion {
-  padding: 5px;
-  font-size: 1.2em
-}
-
-.autocomplete-selected {
-  background: #F0F0F0;
-}
-
-.autocomplete-suggestions strong {
-  font-weight: bold;
-  color: #000;
-}
-
-.autocomplete-group {
-  padding: 2px 5px;
-}
-
-.autocomplete-group strong {
-  font-weight: bold;
-  font-size: 16px;
-  color: #000;
-  display: block;
-  border-bottom: 1px solid #000;
-}
