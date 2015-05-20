@@ -7,15 +7,16 @@
   <h1><%= @topic.name %></h1>
   <hr>
   <% if @articles.size > 0 %>
+      <div class="flash">
+        <%= "%s articles found" % @articles.size %>
+      </div>
       <div class="articles-entries">
         <% @articles.each do |article| %>
             <div class="entry">
-              <h2>
-                <%= link_to(article.title, articles_show_path(:id => article.id)) %>
-              </h2>
+              <h2><%= link_to(article.title, articles_show_path(:id => article.id, :slug => article.slug)) %></h2>
 
               <p><%= article.summary %></p>
-              <time><%= article.created_at.strftime("%m/%d/%Y %H:%I") %></time>
+              <%= link_to('Read Article', articles_show_path(:id => article.id, :slug => article.slug), :class => 'read') %>
             </div>
         <% end %>
       </div>

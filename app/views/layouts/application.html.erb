@@ -21,10 +21,7 @@
 
       <nav class="navbar-nav">
         <% if user_signed_in? %>
-            <a href="<%= url_for(admin_path) %>" class="btn">
-              <span class="octicon octicon-gear"></span>
-              Administration
-            </a>
+            <%= link_to "Administration", admin_path %>
             <%= link_to "Sign out", destroy_user_session_path, :method => :delete %>
         <% end %>
       </nav>

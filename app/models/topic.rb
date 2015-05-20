@@ -5,5 +5,5 @@ class Topic < ActiveRecord::Base
 
   validates_presence_of :name, :slug
   default_scope { order('name ASC') }
-  has_many :articles, dependent: :destroy
+  has_many :articles, -> { order('title asc') }
 end
