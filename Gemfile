@@ -36,6 +36,8 @@ gem 'friendly_id', '~> 5.1.0'
 
 gem 'will_paginate'
 
+gem 'active_link_to'
+
 gem 'impressionist', '~> 1.5.0'
 
 

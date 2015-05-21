@@ -20,10 +20,6 @@ class Admin::ArticlesController < Admin::AdminController
     end
   end
 
-  def published
-    @articles = Article.published.paginate(:page => params[:page], :per_page => 25)
-  end
-
   def edit
     @article = Article.find(params[:id])
   end
@@ -43,7 +39,7 @@ class Admin::ArticlesController < Admin::AdminController
     @article.published_at = Time.now
     @article.save
     flash[:success] = 'The article was successfully published'
-    redirect_to :admin_articles_published
+    redirect_to :back
   end
 
   def unpublish
@@ -51,7 +47,7 @@ class Admin::ArticlesController < Admin::AdminController
     @article.published_at = nil
     @article.save
     flash[:success] = 'The article was successfully unpublished'
-    redirect_to :admin
+    redirect_to :back
   end
 
   private

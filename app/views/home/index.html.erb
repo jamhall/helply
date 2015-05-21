@@ -1,60 +1,70 @@
 <%= render 'shared/search' %>
 <div class="container">
-  <div class="row">
-    <h1 class="browse-topics-header">Browse topics</h1>
-  </div>
-  <% @topics.in_groups_of(3, false) do |group| %>
-      <div class="row">
-        <% group.each do |topic| %>
-            <div class="four columns">
-              <div class="topic-panel">
-                <h2><%= link_to(topic.name, topics_show_path(:slug => topic.slug)) %></h2>
-                <% if topic.articles.published.size == 0 %>
-                    <p>There are no articles for this topic</p>
-                <% else %>
-                    <ul>
-                      <% topic.articles.published.each do |article| %>
-                          <li><%= link_to(article.title, articles_show_path(:id => article.id, :slug => article.slug)) %></li>
+  <div class="home">
+    <div class="widget">
+      <div class="title">Browse Topics</div>
+      <div class="content">
+        <% @topics.in_groups_of(3, false) do |group| %>
+            <div class="row">
+              <% group.each do |topic| %>
+                  <div class="four columns">
+                    <div class="topic-panel">
+                      <h2><%= link_to(topic.name, topics_show_path(:slug => topic.slug)) %></h2>
+                      <% if topic.articles.published.size == 0 %>
+                          <p>There are no articles for this topic</p>
+                      <% else %>
+                          <ul>
+                            <% topic.articles.published.each do |article| %>
+                                <li><%= link_to(article.title, articles_show_path(:id => article.id, :slug => article.slug)) %></li>
+                            <% end %>
+                          </ul>
+                          <a class="view-all" href="<%= url_for topics_show_path(:slug => topic.slug) %>">View all
+                            <span class="counter"><%= topic.articles.published.size %></span>
+                          </a>
                       <% end %>
-                    </ul>
-                    <a class="view-all" href="<%= url_for topics_show_path(:slug => topic.slug) %>">View all
-                      <span class="counter"><%= topic.articles.published.size %></span>
-                    </a>
-                <% end %>
-              </div>
+                    </div>
+                  </div>
+              <% end %>
             </div>
         <% end %>
       </div>
-  <% end %>
-  <div class="row">
-    <div class="four columns">
-      <div class="home-popular-articles">
-        <h1>Popular articles</h1>
-        <ul>
-          <% @popular_articles.each do |article| %>
-              <li><%= link_to(article.title, articles_show_path(:id => article.id, :slug => article.slug)) %></li>
-          <% end %>
-        </ul>
-      </div>
     </div>
-    <div class="four columns">
-      <div class="home-recently-updated-articles">
-        <h1>Recently Updated</h1>
-        <ul>
-          <% @recently_updated_articles.each do |article| %>
-              <li><%= link_to(article.title, articles_show_path(:id => article.id, :slug => article.slug)) %></li>
-          <% end %>
-        </ul>
+    <div class="row">
+      <div class="four columns">
+        <div class="widget">
+          <div class="title">Popular articles</div>
+          <div class="content">
+            <ul>
+              <% @popular_articles.each do |article| %>
+                  <li><%= link_to(article.title, articles_show_path(:id => article.id, :slug => article.slug)) %></li>
+              <% end %>
+            </ul>
+          </div>
+        </div>
       </div>
-    </div>
-    <div class="four columns">
-      <div class="home-recently-added-articles">
-        <h1>Recently Added</h1>
-        <ul>
-          <% @recently_added_articles.each do |article| %>
-              <li><%= link_to(article.title, articles_show_path(:id => article.id, :slug => article.slug)) %></li>
-          <% end %>
-        </ul>
+      <div class="four columns">
+        <div class="widget">
+          <div class="title">Recently Updated</div>
+          <div class="content">
+            <ul>
+              <% @recently_updated_articles.each do |article| %>
+                  <li><%= link_to(article.title, articles_show_path(:id => article.id, :slug => article.slug)) %></li>
+              <% end %>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="four columns">
+        <div class="widget">
+          <div class="title">Recently Added</div>
+          <div class="content">
+            <ul>
+              <% @recently_added_articles.each do |article| %>
+                  <li><%= link_to(article.title, articles_show_path(:id => article.id, :slug => article.slug)) %></li>
+              <% end %>
+            </ul>
+          </div>
+        </div>
       </div>
     </div>
   </div>

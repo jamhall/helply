@@ -10,6 +10,7 @@ class Article < ActiveRecord::Base
   friendly_id :title, :use => :slugged
   scope :published, -> { where('published_at IS NOT NULL') }
   scope :unpublished, -> { where('published_at IS  NULL') }
+  default_scope { order('title ASC') }
   validates :title, presence: true
   validates :summary, presence: true
   validates :content, presence: true

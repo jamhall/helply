@@ -1,0 +1,11 @@
+<div class="container container-margin-top">
+  <%= render 'nav' %>
+  <div class="row">
+    <div class="clearfix">
+          <p class="left"><%= '<b>%d</b> topics'.html_safe % @topics.count %> </p>
+      <a class="btn btn-sm right" style="margin-bottom: 10px" href="<%= url_for(admin_article_create_path) %>"><span class="octicon octicon-plus"></span>
+        New topic </a>
+    </div>
+    <%= render 'table' %>
+  </div>
+</div>

@@ -17,9 +17,8 @@ Rails.application.routes.draw do
     post '/articles/:id/unpublish' => 'articles#unpublish', as: :article_unpublish
     get '/articles/:id/edit' => 'articles#edit', as: :article_edit
     post '/articles/:id/edit' => 'articles#update', as: :article_update
-
+    resources :topics, only: [:index, :edit, :update, :destroy]
   end
-
 
   get '/create' => 'articles#create', as: :articles_create
   get '/articles/:id/:slug' => 'articles#show', as: :articles_show

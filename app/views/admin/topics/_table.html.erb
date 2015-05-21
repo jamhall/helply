@@ -1,0 +1,27 @@
+<table class="table">
+  <thead>
+  <tr>
+    <th>Topic</th>
+    <th>Actions</th>
+  </tr>
+  </thead>
+  <tbody>
+  <% @topics.each do |topic| %>
+      <tr>
+        <td>
+          <%= topic.name %>
+        </td>
+        <td style="width: 95px" class="right">
+          <div class="btn-group">
+            <%= link_to edit_admin_topic_path(topic.id), :class => 'btn btn-sm' do %>
+                <span class="octicon octicon-pencil"></span>
+            <% end %>
+            <%= link_to admin_topics_path(topic.id), :method => :delete, :class => 'btn btn-sm btn-danger', :data => {:confirm => "Are you sure? Deleting this topic will also remove any articles associated to it."} do %>
+                <span class="octicon octicon-trashcan"></span>
+            <% end %>
+          </div>
+        </td>
+      </tr>
+  <% end %>
+  </tbody>
+</table>

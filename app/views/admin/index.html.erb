@@ -1,13 +1,33 @@
 <div class="container container-margin-top">
+  <%= render 'nav' %>
   <div class="row">
-    <div class="twelve columns">
-      <div class="tabnav">
-        <a class="btn btn-sm right" href="<%= url_for(admin_article_create_path) %>"><span class="octicon octicon-plus"></span>
-          New article</a>
-        <nav class="tabnav-tabs">
-          <a href="<%= url_for(admin_path) %>" class="tabnav-tab selected">Unpublished</a>
-          <a href="<%= url_for(admin_articles_published_path) %>" class="tabnav-tab">Published</a>
-        </nav>
+    <div class="four columns">
+      <ul class="filter-list">
+        <li>
+          <%= link_to(admin_path, :class => params[:topic_id] ? 'filter-item' : 'filter-item selected') do %>
+              <span class="count"><%= Article.count %></span>
+              All topics
+          <% end %>
+        </li>
+        <% @topics.each do |topic| %>
+            <li>
+              <%= link_to(admin_path(:topic_id => topic.id), :class => params[:topic_id] == topic.id.to_s ? 'filter-item selected' : 'filter-item') do %>
+                  <span class="count"><%= topic.articles.count %></span>
+                  <%= topic.name %>
+              <% end %>
+            </li>
+        <% end %>
+      </ul>
+    </div>
+    <div class="eight columns">
+      <div class="clearfix">
+        <% if @topic %>
+            <p class="left"><%= '<b>%d</b> articles in <b>%d</b> this topic'.html_safe % [@articles.count, @topics.count] %> </p>
+        <% else %>
+            <p class="left"><%= '<b>%d</b> articles in <b>%d</b> all topics'.html_safe % [@articles.count, @topics.count] %> </p>
+        <% end %>
+        <a class="btn btn-sm right" style="margin-bottom: 10px" href="<%= url_for(admin_article_create_path) %>"><span class="octicon octicon-plus"></span>
+          New article </a>
       </div>
       <%= render 'shared/flash' %>
       <% if @articles.size > 0 %>

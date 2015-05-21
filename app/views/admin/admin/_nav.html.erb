@@ -1,0 +1,10 @@
+<div class="row">
+  <div class="twelve columns">
+    <div class="tabnav">
+      <nav class="tabnav-tabs">
+        <%= active_link_to 'Articles', admin_path, :class => 'tabnav-tab', :active => :exclusive, :class_active => 'selected' %>
+        <%= active_link_to 'Topics', admin_topics_path, :class => 'tabnav-tab', :class_active => 'selected' %>
+      </nav>
+    </div>
+  </div>
+</div>

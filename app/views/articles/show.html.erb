@@ -9,7 +9,8 @@
       <li><%= @article.title %></li>
     </ul>
     <h1><%= @article.title %></h1>
-    <time>Last Updated - <%= @article.updated_at.strftime('%B %d, %Y %H:%M') %></time>
+    <time><span class="octicon octicon-clock"></span> Last Updated
+      - <%= @article.updated_at.strftime('%B %d, %Y %H:%M') %></time>
     <div class="content markdown-body">
       <%= markdown @article.content %>
     </div>
