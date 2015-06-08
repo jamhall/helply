@@ -1,0 +1,17 @@
+<header class="navbar">
+  <div class="container">
+    <div class="row">
+      <a href="<%= url_for(:root) %>" class="navbar-logo">
+        <span class="mega-octicon octicon-file-text"></span>
+        Helply
+      </a>
+
+      <nav class="navbar-nav">
+        <% if user_signed_in? %>
+            <%= link_to "Administration", admin_path %>
+            <%= link_to "Sign out", destroy_user_session_path, :method => :delete %>
+        <% end %>
+      </nav>
+    </div>
+  </div>
+</header>

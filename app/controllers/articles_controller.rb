@@ -1,7 +1,6 @@
 class ArticlesController < ApplicationController
   impressionist :actions=>[:show]
 
-
   def show
     if user_signed_in?
       @article = Article.find(params[:id])

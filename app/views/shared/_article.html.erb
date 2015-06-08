@@ -1,0 +1,6 @@
+<div class="entry">
+  <h2><%= link_to(article.title, articles_show_path(:id => article.id, :slug => article.slug)) %></h2>
+
+  <p><%= article.summary %></p>
+  <%= link_to('Read Article', articles_show_path(:id => article.id, :slug => article.slug), :class => 'read') %>
+</div>

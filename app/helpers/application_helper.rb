@@ -43,4 +43,12 @@ module ApplicationHelper
     }
     Redcarpet::Markdown.new(renderer, extensions).render(text).html_safe
   end
+
+  def title(*args)
+    if(args.empty?)
+      'Helply'
+    else
+    "#{args.join(' - ')} - Helply"
+    end
+  end
 end

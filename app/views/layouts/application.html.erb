@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Helply</title>
+  <title><%= yield(:title) %></title>
   <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
@@ -10,33 +10,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
-
-<header class="navbar">
-  <div class="container">
-    <div class="row">
-      <a href="<%= url_for(:root) %>" class="navbar-logo">
-        <span class="mega-octicon octicon-file-text"></span>
-        Helply
-      </a>
-
-      <nav class="navbar-nav">
-        <% if user_signed_in? %>
-            <%= link_to "Administration", admin_path %>
-            <%= link_to "Sign out", destroy_user_session_path, :method => :delete %>
-        <% end %>
-      </nav>
-    </div>
-  </div>
-</header>
+<%= render 'layouts/header' %>
 <div class="page-wrapper">
   <%= yield %>
 </div>
-<div class="contact-footer">
-  <div class="header">
-    <h2><%= image_tag('icons/email.png') %> Contact Us</h2>
-  </div>
-  <p>Monday Friday 9am to 6pm Eastern Time. It is 8:22am at the office. We are currently closed.</p>
-
-</div>
+<%= render 'layouts/footer' %>
 </body>
 </html>
